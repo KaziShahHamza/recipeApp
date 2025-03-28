@@ -6,7 +6,7 @@ const Register = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const onSubmit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("entered handleSubmit");
     try {
@@ -28,7 +28,7 @@ const Register = () => {
       password={password}
       setPassword={setPassword}
       label="Register"
-      onSubmit={onSubmit}
+      onSubmit={handleSubmit}
     />
   );
 };

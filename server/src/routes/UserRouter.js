@@ -40,6 +40,7 @@ router.post("/login", async (req, res) => {
   const user = await UserModel.findOne({ username });
 
   if (!user) {
+    console.log("user not found")
     return res.json({ message: "user not found" });
   }
   console.log("user found");
@@ -48,6 +49,7 @@ router.post("/login", async (req, res) => {
   const isPasswordMatched = await bcrypt.compare(password, user.password);
 
   if (!isPasswordMatched) {
+    console.log("password don't match")
     return res.json({ message: "password doesn't match" });
   }
   console.log("password matched");
