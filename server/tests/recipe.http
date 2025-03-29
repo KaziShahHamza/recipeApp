@@ -1,0 +1,11 @@
+POST http://localhost:3001/recipes
+Content-Type: application/json
+
+{
+    "name": "Tea 2",
+    "ingredients": ["water", "milk", "sugar", "tea"],
+    "instructions": "Make in 5 mins",
+    "imageUrl": "https://www.teaforturmeric.com/wp-content/uploads/2021/11/Masala-Chai-Tea-Recipe-Card.jpg",
+    "cookingTime": "10 mins",
+    "userOwner": "67e54ca41a1bfd9d39221733"
+}
