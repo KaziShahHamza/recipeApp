@@ -16,7 +16,6 @@ app.use("/recipes", recipeRouter);
 
 const connectDB = async () => {
   try {
-    console.log("Connecting to Database...");
     const conn = await mongoose.connect(
       "mongodb+srv://kazishahhamza:u9i5RzWFxlIbYxCf@cluster0.2rnwq.mongodb.net/recipedb?retryWrites=true&w=majority&appName=Cluster0"
     );

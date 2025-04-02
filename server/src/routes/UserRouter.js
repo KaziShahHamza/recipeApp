@@ -5,19 +5,6 @@ import UserModel from "../models/UserModel.js";
 
 const router = express.Router();
 
-router.get("/env", (req, res) => {
-  console.log("secretKey :", process.env.JWT_SECRET);
-  console.log("secret + " + process.env.JWT_SECRET);
-  
-  if (!process.env.JWT_SECRET) {
-    return res.status(500).json({ message: "JWT_SECRET not found in env" });
-  }
-
-  res.json({
-    JWT_SECRET: process.env.JWT_SECRET,
-  });
-});
-
 
 router.post("/register", async (req, res) => {
   const { username, password } = req.body;
@@ -44,7 +31,6 @@ router.post("/login", async (req, res) => {
     return res.json({ message: "user not found" });
   }
   console.log("user found");
-  console.log(user);
 
   const isPasswordMatched = await bcrypt.compare(password, user.password);
 
@@ -57,7 +43,6 @@ router.post("/login", async (req, res) => {
   const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
   if (token) {
     console.log("token generated");
-    console.log(token);
   }
   res.json({ token, userID: user._id });
 });
