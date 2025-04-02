@@ -8,13 +8,11 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("entered handleSubmit");
     try {
       await axios.post("http://localhost:3001/auth/register", {
         username,
         password,
       });
-      console.log("registration completed");
       alert("Registration completed, now login to continue");
     } catch (err) {
       console.error(err);

@@ -14,7 +14,6 @@ const Home = () => {
       try {
         const response = await axios.get("http://localhost:3001/recipes");
         setRecipes(response.data);
-        // console.log(response.data);
       } catch (error) {
         console.log(error);
       }
@@ -26,7 +25,6 @@ const Home = () => {
           `http://localhost:3001/recipes/savedRecipes/ids/${userID}`
         );
         setSavedRecipe(response.data.savedRecipes);
-        // console.log(response.data);
       } catch (error) {
         console.log(error);
       }

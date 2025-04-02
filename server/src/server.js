@@ -16,9 +16,7 @@ app.use("/recipes", recipeRouter);
 
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect(
-      "mongodb+srv://kazishahhamza:u9i5RzWFxlIbYxCf@cluster0.2rnwq.mongodb.net/recipedb?retryWrites=true&w=majority&appName=Cluster0"
-    );
+    const conn = await mongoose.connect(process.env.MONGO_URI);
     console.log(`MongoDB Atlas Connected`);
   } catch (error) {
     console.error(`MongoDB Connection Error: ${error.message}`);
