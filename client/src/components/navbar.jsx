@@ -17,9 +17,11 @@ const Navbar = () => {
     <div className="navbar">
       <Link to="/">Home</Link>
       <Link to="/create-recipe">Create Recipe</Link>
-      <Link to="/saved-recipes">Saved Recipes</Link>
       {cookies.access_token ? (
-        <button onClick={logoutFunc}>Log Out</button>
+        <>
+          <Link to="/saved-recipes">Saved Recipes</Link>
+          <button onClick={logoutFunc}>Log Out</button>
+        </>
       ) : (
         <Link to="/auth">Login/Register</Link>
       )}
