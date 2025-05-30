@@ -21,6 +21,10 @@ router.post("/register", async (req, res) => {
 
 router.post("/login", async (req, res) => {
   const { username, password } = req.body;
+  console.log("LOGIN REQUEST:", req.body);
+  console.log("Connected DB:", mongoose.connection.name);
+
+  console.log(username, password);
   const user = await UserModel.findOne({ username });
 
   if (!user) {
@@ -42,7 +46,6 @@ router.post("/login", async (req, res) => {
   }
   res.json({ token, userID: user._id });
 });
-
 
 export const verifyToken = (req, res, next) => {
   const token = req.headers.authorization;
