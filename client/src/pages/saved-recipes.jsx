@@ -13,7 +13,7 @@ const SavedRecipes = () => {
           `${import.meta.env.VITE_API_URL}/recipes/savedRecipes/${userID}`
         );
         setSavedRecipe(response.data.savedRecipes);
-        // console.log(response.data);
+        console.log(response.data);
       } catch (error) {
         console.log(error);
       }

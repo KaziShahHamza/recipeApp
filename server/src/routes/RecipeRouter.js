@@ -22,7 +22,7 @@ router.post("/", verifyToken, async (req, res) => {
     await recipe.save();
 
     res.json("Recipe Created");
-    console.log("Recipe Created 2");
+    // console.log("Recipe Created 2");
   } catch (error) {
     console.log("Recipe not created");
     res.json({ message: error.message });
@@ -40,7 +40,7 @@ router.put("/", verifyToken, async (req, res) => {
     if (!user) {
       return res.status(404).json({ message: "User not found" });
     }
-  
+
     user.savedRecipes.push(recipe._id);
     await user.save();
 

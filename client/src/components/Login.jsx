@@ -15,10 +15,13 @@ const Login = () => {
     e.preventDefault();
     console.log("entered handleSubmit");
     try {
-      const response = await axios.post(`${import.meta.env.VITE_API_URL}/auth/login`, {
-        username,
-        password,
-      });
+      const response = await axios.post(
+        `${import.meta.env.VITE_API_URL}/auth/login`,
+        {
+          username,
+          password,
+        }
+      );
 
       setCookies("access_token", response.data.token);
       console.log("login completed");

@@ -9,7 +9,7 @@ const Home = () => {
   const [cookies, _] = useCookies(["access_token"]);
   const userID = useGetUserID();
 
-  console.log("from home", import.meta.env.VITE_API_URL);
+  // console.log("from home", import.meta.env.VITE_API_URL);
 
   useEffect(() => {
     const fetchRecipe = async () => {
@@ -52,10 +52,10 @@ const Home = () => {
         }
       );
       setSavedRecipe(response.data);
-      console.log(response.data);
+      // console.log(response.data);
     } catch (error) {
       console.log(error);
-      console.log("Error from homepage");
+      // console.log("Error from homepage");
     }
   };
 

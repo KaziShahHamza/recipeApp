@@ -22,28 +22,28 @@ router.post("/register", async (req, res) => {
 
 router.post("/login", async (req, res) => {
   const { username, password } = req.body;
-  console.log("username: ", username, " & password: ", password);
-  console.log("LOGIN REQUEST:", req.body);
-  console.log("Connected DB:", mongoose.connection.name);
+  // console.log("username: ", username, " & password: ", password);
+  // console.log("LOGIN REQUEST:", req.body);
+  // console.log("Connected DB:", mongoose.connection.name);
 
   const user = await UserModel.findOne({ username });
 
   if (!user) {
-    console.log("user not found");
+    // console.log("user not found");
     return res.json({ message: "user not found" });
   }
   console.log("user found");
 
   const isPasswordMatched = await bcrypt.compare(password, user.password);
   if (!isPasswordMatched) {
-    console.log("password don't match");
+    // console.log("password don't match");
     return res.json({ message: "password doesn't match" });
   }
-  console.log("password matched");
+  // console.log("password matched");
 
   const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
   if (token) {
-    console.log("token generated");
+    // console.log("token generated");
   }
   res.json({ token, userID: user._id });
 });
