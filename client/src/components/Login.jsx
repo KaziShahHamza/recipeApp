@@ -22,7 +22,7 @@ const Login = () => {
 
       setCookies("access_token", response.data.token);
       console.log("login completed");
-      window.localStorage.setItem("userID", response.data.userID);
+      window.localStorage.setItem("userID2", response.data.userID);
       navigate("/");
     } catch (err) {
       console.error(err);

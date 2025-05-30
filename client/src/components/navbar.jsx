@@ -9,7 +9,7 @@ const Navbar = () => {
 
   const logoutFunc = () => {
     setCookies("access_token", "");
-    window.localStorage.removeItem("userID");
+    window.localStorage.removeItem("userID2");
     navigate("/auth");
   };
 
