@@ -2,6 +2,7 @@ import express from "express";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 import UserModel from "../models/UserModel.js";
+import mongoose from "mongoose";
 
 const router = express.Router();
 
@@ -21,10 +22,10 @@ router.post("/register", async (req, res) => {
 
 router.post("/login", async (req, res) => {
   const { username, password } = req.body;
+  console.log("username: ", username, " & password: ", password);
   console.log("LOGIN REQUEST:", req.body);
   console.log("Connected DB:", mongoose.connection.name);
 
-  console.log(username, password);
   const user = await UserModel.findOne({ username });
 
   if (!user) {
