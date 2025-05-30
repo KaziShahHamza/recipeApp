@@ -43,7 +43,6 @@ router.post("/login", async (req, res) => {
   res.json({ token, userID: user._id });
 });
 
-export { router as userRouter };
 
 export const verifyToken = (req, res, next) => {
   const token = req.headers.authorization;
@@ -56,3 +55,5 @@ export const verifyToken = (req, res, next) => {
     res.sendStatus(401);
   }
 };
+
+export { router as userRouter };

@@ -1,7 +1,0 @@
-PUT http://localhost:3001/recipes
-Content-Type: application/json
-
-{
-    "userID": "67e6462f3afe4b87935d1e5c",
-    "recipeID": "67e7a2dd775154c5f1e72f15"
-}
