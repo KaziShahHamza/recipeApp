@@ -20,7 +20,9 @@ const Navbar = () => {
       {cookies.access_token ? (
         <>
           <Link to="/saved-recipes">Saved Recipes</Link>
-          <button onClick={logoutFunc}>Log Out</button>
+          <button onClick={logoutFunc} className="logout">
+            Log Out
+          </button>
         </>
       ) : (
         <Link to="/auth">Login/Register</Link>

@@ -73,7 +73,11 @@ const Home = () => {
                 onClick={() => saveRecipe(recipe._id)}
                 disabled={isRecipeSaved(recipe._id)}
               >
-                {isRecipeSaved(recipe._id) ? "Saved" : "save"}
+                {isRecipeSaved(recipe._id) ? (
+                  <span className="savedButton">Saved</span>
+                ) : (
+                  <span className="saveButton">Save</span>
+                )}
               </button>
             </div>
             <div>
