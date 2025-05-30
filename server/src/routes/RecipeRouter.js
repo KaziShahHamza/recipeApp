@@ -9,7 +9,7 @@ router.get("/", async (req, res) => {
   try {
     const response = await RecipeModel.find({});
     res.json(response);
-    console.log("Recipes fetched");
+    // console.log("Recipes fetched");
   } catch (error) {
     console.log("Recipes not fetched");
     res.json({ message: error.message });

@@ -38,7 +38,7 @@ const CreateRecipe = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:3001/recipes", recipe, {
+      await axios.post(`${import.meta.env.VITE_API_URL}/recipes`, recipe, {
         headers: { authorization: cookies.access_token },
       });
       alert("Recipe Created");
